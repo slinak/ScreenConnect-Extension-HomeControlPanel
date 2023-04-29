@@ -12,26 +12,37 @@
 <dl class="ControlPanel"></dl>
 <!--<iframe src="https://calendar.google.com/calendar/embed?src=scott%40linak.org&ctz=America%2FLos_Angeles" style="border: 0" width="800" height="600" frameborder="0" scrolling="no"></iframe>-->
 <script>
+	window.setTimeout( function() {
+		window.location.reload();
+	}, 300000);
+
 	SC.event.addGlobalHandler(SC.event.PreRender, function () {
 		SC.pagedata.notifyDirty();
 	});
 
 	SC.event.addGlobalHandler(SC.event.PageDataDirtied, function () {
-		SC.service.GetWeatherInfo(weatherInfo => SC.service.GetLifxLights(lightInfo => {
-			SC.pagedata.set({ weatherInfo, lightInfo });
-		}));
+		SC.service.GetWeatherInfo(weatherInfo => 
+			SC.service.GetLifxLights(lightInfo => {
+				SC.pagedata.set({ weatherInfo, lightInfo });
+			})
+		);
 	});
 	
 	SC.event.addGlobalHandler(SC.event.PageDataRefreshed, function () {
 		var controlPanelInfo = SC.pagedata.get();
 		console.log(controlPanelInfo);
 		var today = new Date();
-		const weekday = [ "Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday" ];
-		const month = [ "January", "Febuary", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December" ];
-		
 		
 		SC.ui.setContents($('.ControlPanel'), [
-			$h1({ className: 'CurrentDayBanner', innerHTML: 'Today is ' + weekday[today.getUTCDay()] + ", " + month[today.getMonth()] + " " + today.getDate() + " " + today.getFullYear() }),
+			$h1({ className: 'CurrentDayBanner', 
+				innerHTML: 
+				SC.util.formatString(SC.res["AdministrationPanel.HomeControlPanel.DateTitleFormat"], 
+					HCP.util.getDayOfWeek(today.getUTCDay()), 
+					HCP.util.getMonth(today.getMonth()), 
+					today.getDate(), 
+					today.getFullYear()
+				)
+			}),
 			$div({ className: 'Dashboard' }, [
 				$div({ className: 'MainColumn' }),
 				$div({ className: 'SecondaryColumn' }),

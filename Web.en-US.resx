@@ -18,4 +18,8 @@
   <data name="AdministrationPanel.ForecastTabTitleFormat" xml:space="preserve">
     <value>7 Day Forecast.  It is currently {0}°F</value>
   </data>
+  <data name="AdministrationPanel.HomeControlPanel.DateTitleFormat" xml:space="preserve">
+    <value>Today is {0}, {1} {2} {3}</value>
+  </data>
+  
 </root>

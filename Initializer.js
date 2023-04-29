@@ -78,7 +78,7 @@ SC.event.addGlobalHandler(SC.event.QueryPanels, function (eventArgs) {
 								],
 							})
 						)
-					),
+					),/*
 				initializeProc: function (statusTab) {
 					const updateStatusTileProc = function (statusCheckName, result, data, errorMessage) {
 						const statusTestPanel = SC.ui.findDescendent(statusTab, it => it.className && it.className.includes('StatusTestPanel') && it._dataItem === statusCheckName);
@@ -94,7 +94,7 @@ SC.event.addGlobalHandler(SC.event.QueryPanels, function (eventArgs) {
 						updateStatusTileProc(definition[0], SC.types.TestResult.Incomplete);
 						
 					});
-				},
+				},*/
 			});
 			break;
 		case 'SecondaryColumn':

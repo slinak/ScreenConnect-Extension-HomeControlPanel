@@ -4,6 +4,7 @@ const weekdays = [ "Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Frid
 const weekdayShort = [ "SUN", "MON", "TUE", "WED", "THU", "FRI", "SAT" ];
 const months = [ "January", "Febuary", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December" ];
 const WMOCodes = [
+	//{ Code : 0, Text : "Clear Sky"},
 	{ 0 : "Clear Sky"},
 	{ 1 : "Mainly clear, partly cloudy, and overcast"},
 	{ 2 : "Mainly clear, partly cloudy, and overcast"},
@@ -57,6 +58,10 @@ HCP.util.formatDate = function (date) {
 
 HCP.util.getDayOfWeek = function (day) {
 	return weekdays[day];
+}
+
+HCP.util.getMonth = function (month) {
+	return months[month];
 }
 
 HCP.util.getDayOfWeekShort = function (day) {
