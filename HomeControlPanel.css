@@ -1,0 +1,22 @@
+.TabContents {
+	width: 100%;
+}
+
+.DailyForecastTable {
+	width:100%;
+	font-size:30px;
+	text-align:center;
+}
+
+a[target="_blank"]:after {
+	content: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAYAAACNMs+9AAAAQElEQVR42qXKwQkAIAxDUUdxtO6/RBQkQZvSi8I/pL4BoGw/XPkh4XigPmsUgh0626AjRsgxHTkUThsG2T/sIlzdTsp52kSS1wAAAABJRU5ErkJggg==)
+}
+/*
+.MasterPanel {
+	width:10% !important;
+}
+*/
+
+.OuterPanel .MainPanel {
+	--default-grid-template-columns:5% 80% 15%;
+}
