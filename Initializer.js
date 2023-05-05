@@ -56,7 +56,7 @@ SC.event.addGlobalHandler(SC.event.QueryPanels, function (eventArgs) {
 				titlePanelExtra: $a({ target: '_blank', href: 'https://www.wunderground.com/forecast/us/or/beaverton/KORBEAVE473', text: 'Open External ' }),
 				content: 
 					SC.ui.createTabs(
-						'StatusTab', 
+						'ForecastTab', 
 						weatherPanelDefinitions.map(definition => ({
 							name: definition[0],
 							link: $div({ className: 'Header', _dataItem: definition[0] }, [
