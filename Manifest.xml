@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ExtensionManifest>
-	<Version>1.0</Version>
+	<Version>1.0.1</Version>
 	<Name>* Home Control Panel</Name>
 	<Author>ConnectWise Labs</Author>
 	<ShortDescription>Internal Dev Tools</ShortDescription>
@@ -13,6 +13,9 @@
 	</Components>
 	<Settings>
 		<Setting Name="LifxAppToken" IsServerOnly="true">
+			<DefaultValue></DefaultValue>
+		</Setting>
+		<Setting Name="CityWeatherEndpoint" IsServerOnly="true">
 			<DefaultValue></DefaultValue>
 		</Setting>
 	</Settings>
